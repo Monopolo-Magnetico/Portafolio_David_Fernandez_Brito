@@ -1,0 +1,17 @@
+html {
+    background-color: #1a1d23;
+}
+
+body {
+    margin: 0;
+    color: #d8dce3;
+}
+
+#fondo {
+    position: fixed; /*El fondo sera fijo aunque haya scroll*/
+    /*Fijamos el origen en la esquina superior izquierda*/
+    top: 0;
+    left: 0;
+    z-index: -1; /* lo enviamos a la capa de hasta atras*/
+    pointer-events: none; /*Con este atributo en valor none evitamos que sea afectado por eventos del mouse como clicks o selecciones de texto. No interviene con el event listener del juego porque ese lo escuchamos desde la ventana, no del canvas*/
+}
