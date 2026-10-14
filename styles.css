@@ -1,12 +1,30 @@
+/* ---------- Paleta de colores ---------- */
+:root {
+    --card-bg: rgba(35, 40, 51, 0.9);
+    --card-borde: #2c3340;
+    --texto: #e6e9ef;
+    --texto-suave: #9aa4b5;
+    --titulo: #a8c7d1;
+    --enlace: #7fb7c6;
+    --etiqueta-bg: #2f3a4a;
+    --etiqueta-texto: #a8c7d1;
+}
+ 
+/* ---------- Fondo, mismo color que las celulas muertas en el juego de la vida ---------- */
 html {
     background-color: #1a1d23;
 }
-
+ 
 body {
     margin: 0;
-    color: #d8dce3;
+    /* Bootstrap pinta el body de blanco por defecto, ese blanco taparía el
+       canvas en z-index: -1. Con transparent se ve el fondo de html y el canvas. */
+    background: transparent;
+    color: var(--texto);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
 }
-
+ 
 #fondo {
     position: fixed; /*El fondo sera fijo aunque haya scroll*/
     /*Fijamos el origen en la esquina superior izquierda*/
@@ -14,4 +32,163 @@ body {
     left: 0;
     z-index: -1; /* lo enviamos a la capa de hasta atras*/
     pointer-events: none; /*Con este atributo en valor none evitamos que sea afectado por eventos del mouse como clicks o selecciones de texto. No interviene con el event listener del juego porque ese lo escuchamos desde la ventana, no del canvas*/
+}
+ 
+a:focus-visible {
+    outline: 2px solid var(--enlace);
+    outline-offset: 3px;
+}
+ 
+/* ---------- Encabezado ---------- */
+.encabezado {
+    padding: 4rem 0 3rem;
+    text-align: center;
+}
+ 
+.encabezado h1 {
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+}
+ 
+.rol-principal {
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    margin: 0;
+}
+ 
+.rol-secundario {
+    color: var(--texto-suave);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin: 0 0 1.75rem;
+}
+ 
+.enlaces-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+ 
+.btn-contacto {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-borde);
+    border-radius: 999px;
+    color: var(--texto);
+    text-decoration: none;
+}
+ 
+.btn-contacto:hover {
+    border-color: var(--enlace);
+    color: var(--enlace);
+}
+ 
+.correo-texto {
+    margin: 0.75rem 0 0;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    user-select: all; /* un clic selecciona todo el correo para copiarlo */
+}
+ 
+/* ---------- Proyectos ---------- */
+.titulo-seccion {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+ 
+/* ---------- Cards ---------- */
+.proyecto {
+    background: var(--card-bg);
+    border: 1px solid var(--card-borde);
+    border-radius: 0.75rem;
+    overflow: hidden; /* recorta la imagen con las esquinas redondeadas */
+    color: var(--texto);
+}
+ 
+.proyecto .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem 1.25rem 1.5rem;
+}
+ 
+.proyecto-titulo {
+    color: var(--titulo);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem;
+}
+ 
+.proyecto-fecha {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    margin: 0 0 0.75rem;
+}
+ 
+.proyecto-desc {
+    margin: 0 0 1rem;
+}
+ 
+.etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    list-style: none;
+}
+ 
+.etiqueta {
+    background: var(--etiqueta-bg);
+    color: var(--etiqueta-texto);
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+}
+ 
+/* margin-top: auto empuja el enlace al fondo de la card, así quedan
+   alineados aunque las descripciones tengan distinta longitud */
+.enlace-repo {
+    margin-top: auto;
+    color: var(--enlace);
+    font-weight: 500;
+    text-decoration: none;
+}
+ 
+.enlace-repo:hover {
+    text-decoration: underline;
+}
+
+/* Cuando una card tiene más de un enlace, el grupo es el que se pega al fondo */
+.enlaces-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: auto;
+}
+ 
+.enlaces-card .enlace-repo {
+    margin-top: 0;
+}
+ 
+/* ---------- Nota sobre el fondo ---------- */
+.nota-fondo {
+    max-width: 40rem;
+    margin: 4rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--card-borde);
+    text-align: center;
+}
+ 
+.nota-fondo p {
+    margin: 0 0 0.75rem;
+}
+ 
+.nota-fondo strong {
+    color: var(--titulo);
+    font-weight: 600;
 }

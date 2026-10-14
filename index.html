@@ -1,15 +1,172 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!--SEO-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Java Full Stack Developer and Physicist">
     <meta name="keywords" content="David, David Fernandez, David Fernandez Brito, Fernandez Brito, Brito, Full Stack Developer">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <!--Fuentes de Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+  rel="stylesheet">
+    <!--CSS-->
     <link rel="stylesheet" href="styles.css">
     <title>Portafolio</title>
 </head>
 <body>
+    <!--Canvas donde se pinta el juego de la vida, al fondo-->
     <canvas id="fondo" aria-hidden="true"></canvas>
+
+    <!--Inicio main-->
+    <main class="container pb-5">
+        <header class="encabezado">
+            <h1>David Fernández Brito</h1>
+            <p class="rol-principal">Desarrollador fullstack</p>
+            <p class="rol-secundario">Físico de materiales</p>
+
+            <nav class="enlaces-contacto" aria-label="Contacto y GitHub">
+                <a class="btn-contacto" href="https://github.com/Monopolo-Magnetico" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a class="btn-contacto" href="https://www.linkedin.com/in/davidfernandezbrito/" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn
+                </a>
+                <a class="btn-contacto" href="mailto:david.fernandezbrito01@gmail.com">
+                    <i class="bi bi-envelope" aria-hidden="true"></i> Correo
+                </a>
+            </nav>
+            <p class="correo-texto">david.fernandezbrito01@gmail.com</p>
+
+        </header>
+
+        <!--Proyectos-->
+
+        <section aria-labelledby="titulo-proyectos">
+            <h2 id="titulo-proyectos" class="titulo-seccion">Proyectos</h2>
+ 
+            <div class="row g-4">
+ 
+                <!-- Card 1: Hackathon, landing page -->
+                <div class="col-12 col-md-6">
+                    <article class="card h-100 proyecto">
+                        <div class="ratio ratio-16x9">
+                            <img class="object-fit-cover" src="img/gryffindor_1.png"
+                                 alt="Captura de la landing page de Gryffindor" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="proyecto-titulo">Hackathon: Landing page de Gryffindor</h3>
+                            <p class="proyecto-fecha"><time datetime="AAAA-MM">Septiembre 2026</time></p>
+                            <p class="proyecto-desc">Página de aterrizaje con temática de la emblemática casa de Hogwarts, Gryffindor, desarrollada durante un hackathon.</p>
+                            <ul class="etiquetas" aria-label="Tecnologías">
+                                <li class="etiqueta">HTML</li>
+                                <li class="etiqueta">CSS</li>
+                                <li class="etiqueta">Bootstrap</li>
+                                <li class="etiqueta">JavaScript</li>
+                            </ul>
+                            <a class="enlace-repo" href="https://github.com/DanielCastroPerez/Gryffindor-Resistance" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-github" aria-hidden="true"></i> Ver repositorio
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Card 2: Hackathon, agenda en Java -->
+                <div class="col-12 col-md-6">
+                    <article class="card h-100 proyecto">
+                        <div class="ratio ratio-16x9">
+                            <img class="object-fit-cover" src="img/agenda_java.png"
+                                 alt="Captura de la agenda de escritorio con interfaz gráfica" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="proyecto-titulo">Hackathon: Agenda de escritorio</h3>
+                            <p class="proyecto-fecha"><time datetime="AAAA-MM">Septiembre 2026</time></p>
+                            <p class="proyecto-desc">Aplicación de escritorio con interfaz gráfica para organizar una agenda, hecha durante un hackathon.</p>
+                            
+                            <ul class="etiquetas" aria-label="Tecnologías">
+                                <li class="etiqueta">Java</li>
+                                <li class="etiqueta">Swing</li>
+                            </ul>
+                            <a class="enlace-repo" href="https://github.com/Alberto-Pedraza/agenda" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-github" aria-hidden="true"></i> Ver repositorio
+                            </a>
+                        </div>
+                    </article>
+                </div>
+ 
+                <!-- Card 3: E-commerce fullstack -->
+                <div class="col-12 col-md-6">
+                    <article class="card h-100 proyecto">
+                        <div class="ratio ratio-16x9">
+                            <img class="object-fit-cover" src="img/otterclothes.png"
+                                 alt="Captura de la tienda en línea Otterclothes" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="proyecto-titulo">OtterClothes: E-Commerce de outfits</h3>
+                            <p class="proyecto-fecha"><time datetime="AAAA-MM">Octubre 2026</time></p>
+                            <p class="proyecto-desc">Desarrollo fullstack de tienda en línea: interfaz, servidor y base de datos.</p>
+                            <ul class="etiquetas" aria-label="Tecnologías">
+                                <li class="etiqueta">HTML</li>
+                                <li class="etiqueta">CSS</li>
+                                <li class="etiqueta">JavaScript</li>
+                                <li class="etiqueta">Bootstrap</li>
+                                <li class="etiqueta">Java</li>
+                                <li class="etiqueta">Spring Boot</li>
+                                <li class="etiqueta">MySQL</li>
+                            </ul>
+
+                            <!--Contenedor de enlaces-->
+                            <div class="enlaces-card">
+                                <a class="enlace-repo" href="https://github.com/Bri-idk/OtterClothes" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-github" aria-hidden="true"></i> Ver repositorio
+                                </a>
+                                <a class="enlace-repo" href="https://bri-idk.github.io/OtterClothes/" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-globe2" aria-hidden="true"></i> Ver sitio
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+ 
+                <!-- Card 4: AFM-DAQ Visualizer -->
+                <div class="col-12 col-md-6">
+                    <article class="card h-100 proyecto">
+                        <div class="ratio ratio-16x9">
+                            <img class="object-fit-cover" src="img/afm_daq_vis.png"
+                                 alt="Gráfico comparativo de cuatro imagenes de microscopía de fuerza atómica generada por el software AFM-DAQ Visualizer" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="proyecto-titulo">AFM-DAQ Visualizer</h3>
+                            <p class="proyecto-fecha"><time datetime="AAAA-MM">Julio 2024</time></p>
+                            <p class="proyecto-desc">Convierte datos crudos de microscopía de fuerza atómica (AFM) en imágenes, escrita en Python</p>
+                            <ul class="etiquetas" aria-label="Tecnologías">
+                                <li class="etiqueta">Python</li>
+                            </ul>
+                            <a class="enlace-repo" href="https://github.com/Monopolo-Magnetico/AFM_DAQ_Visualizer" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-github" aria-hidden="true"></i> Ver repositorio
+                            </a>
+                        </div>
+                    </article>
+                </div>
+ 
+            </div>
+        </section>
+
+        <!--Nota al footer-->
+        <footer class="nota-fondo">
+            <p><strong>Este fondo está vivo.</strong> Soy entusiasta de Rust y de los videojuegos, y de esa mezcla nació: es el Juego de la Vida de Conway, escrito en Rust y compilado a WebAssembly.</p>
+            <p>Cada visita arranca con una semilla distinta: Son los milisegundos transcurridos desde 1970 hasta ahora, así que lo que ves es único para ti.</p>
+        </footer>
+
+    </main>
+
+    <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script type="module" src="gameOfLife.js"></script>
 </body>
 </html>
